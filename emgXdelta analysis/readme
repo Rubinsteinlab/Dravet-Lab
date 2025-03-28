@@ -1,0 +1,66 @@
+# Delta-EMG Analysis Pipeline
+
+This MATLAB project processes EEG and EMG recordings in two temporal blocks. It extracts spectral and statistical features, clusters EMG activity using Gaussian Mixture Models (GMM), and analyzes the interaction between EEG delta power and EMG muscle activity.
+
+## 📁 Folder Structure
+
+```
+code/
+├── EEG_first_block.mat         # Demo EEG data - first block
+├── EEG_second_block.mat        # Demo EEG data - second block
+├── EMG_first_block.mat         # Demo EMG data - first block
+├── EMG_second_block.mat        # Demo EMG data - second block
+├── delta_EMG_analysis.m        # Main analysis script
+└── README.md                   # This file
+```
+
+## 🧠 Project Description
+
+- EEG and EMG signals are band-pass filtered (0.5–50 Hz for EEG, 20–50 Hz for EMG).
+- Signals are segmented into 5-second epochs.
+- For each epoch:
+  - **Power Spectral Density (PSD)** is calculated via Welch's method.
+  - Relative power in 5 bands is computed: delta, theta, alpha, beta, gamma.
+  - **EMG RMS** is used for GMM-based clustering of muscle activity (5 levels).
+- The product of delta power × EMG cluster centroids is computed and exported for visualization.
+
+## 🧰 Requirements
+
+- MATLAB R2020b or later
+- Required toolboxes:
+  - Signal Processing Toolbox
+  - Statistics and Machine Learning Toolbox
+
+## 🚀 How to Run
+
+1. Make sure all `.mat` files and `delta_EMG_analysis.m` are in the same directory.
+2. Open MATLAB.
+3. Navigate to the directory.
+4. Run:
+   ```matlab
+   delta_EMG_analysis
+   ```
+
+The script will:
+
+- Filter the signals
+- Segment them into epochs
+- Extract power and RMS features
+- Cluster EMG data
+- Plot histograms and save analysis results
+
+## 📂 Demo Data
+
+This demo dataset includes synthetic or anonymized recordings labeled as:
+
+- EEG\_first\_block.mat
+- EEG\_second\_block.mat
+- EMG\_first\_block.mat
+- EMG\_second\_block.mat
+
+> Each `.mat` file contains a variable named either `EEG_first_block`, `EEG_second_block`, `EMG_first_block`, or `EMG_second_block`.
+
+---
+
+For any questions or clarifications, please contact the project maintainer.
+
