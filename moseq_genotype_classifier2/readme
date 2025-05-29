@@ -3,7 +3,7 @@
 
 This pipeline performs automated classification of mouse genotype (`WT` or `DS`) based on behavioral features extracted from **MoSeq syllable data** and associated movement features. It uses a trained machine learning model (Random Forest) to classify each mouse from its aggregated behavioral profile.
 
-****** Make sure you trained your dataset with the same AR-HMM model used to trained the original moseq_df which this classifier was trained on *****
+****** Make sure you trained your dataset with the same AR-HMM model (model.p file) used to trained the original moseq_df which this classifier was trained on *****
 
 ---
 
