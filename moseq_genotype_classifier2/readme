@@ -1,1 +1,119 @@
 
+# MoSeq-Based Genotype Classification Pipeline (WT vs. DS)
+
+This pipeline performs automated classification of mouse genotype (`WT` or `DS`) based on behavioral features extracted from **MoSeq syllable data** and associated movement features. It uses a trained machine learning model (Random Forest) to classify each mouse from its aggregated behavioral profile.
+
+****** Make sure you trained your dataset with the same AR-HMM model used to trained the original moseq_df which this classifier was trained on *****
+
+---
+
+## 📦 Directory Structure
+
+```
+.
+├── mouse_level_moseq_features.csv         # Aggregated feature file (1 row per mouse)
+├── final_moseq_model.pkl                  # Trained Random Forest model
+├── final_scaler.pkl                       # StandardScaler for input normalization
+├── final_features.pkl                     # List of input feature names used by the model
+├── predict_genotype_new_data.py          # Script to classify new MoSeq data
+├── create_combined_moseq_df.py           # Script to generate test mixes of WT/DS
+├── train_and_save_final_model.py         # (Optional) Re-training script on labeled mice
+├── visualize_feature_space.py            # PCA and t-SNE visualization
+├── README.md                             
+```
+
+---
+
+## 🚀 How It Works
+
+1. **Input**: A `moseq_df.csv` file with per-frame MoSeq data.
+2. **Feature Extraction**: Aggregates each mouse’s syllable usage + movement stats.
+3. **Prediction**: Uses a trained classifier to assign `WT` or `DS` genotype.
+4. **Visualization** (optional): t-SNE/PCA plot of mouse feature space.
+
+---
+
+## 🛠 Requirements
+
+- Python 3.8+
+- Libraries: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `joblib`
+
+Install with:
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn joblib
+```
+
+---
+
+## 📥 Input File Format
+
+Your input `moseq_df.csv` **must include**:
+
+- `SubjectName` (string): includes unique mouse ID and genotype (e.g., `C5412 WT`)
+- `group` (string): must be `'WT'` or `'DS'` per frame
+- `labels (usage sort)`: syllable label per frame
+- MoSeq-derived movement features (e.g., `velocity_3d_mm`, `centroid_x_px`, etc.)
+
+---
+
+## 📤 Output Files
+
+- `predicted_genotypes_new_data.csv`: Predicted genotype for each mouse, with confidence scores
+- `combined_moseq_df.csv`: Mixed WT/DS dataset for testing (if using `create_combined_moseq_df.py`)
+- Visualization plots (if you use `visualize_feature_space.py`)
+
+---
+
+## ▶️ Run Instructions
+
+### 1. Classify new mice:
+```bash
+python predict_genotype_new_data.py
+```
+
+### 2. Generate mixed genotype dataset (for testing):
+```bash
+python create_combined_moseq_df.py
+```
+
+### 3. Train or re-train the model (if needed):
+```bash
+python train_and_save_final_model.py
+```
+
+### 4. Visualize genotype clustering:
+```bash
+python visualize_feature_space.py
+```
+
+---
+
+## 🧠 Assumptions & Notes
+
+- The current model was trained on 38 mice: 27 WT, 11 DS.
+- Predictions are made using **syllable usage** + **movement feature statistics**.
+- The pipeline assumes data is generated under **consistent recording conditions**:
+  - Same arena setup
+  - Same MoSeq version and labeling
+  - Same feature extraction scripts
+
+---
+
+## 🔁 For Future Users
+
+If you are applying this model to new mice:
+
+- ✅ Make sure your `moseq_df.csv` includes all required columns.
+- ✅ Use the same syllable labeling logic (same MoSeq version!).
+- ✅ Use the same aggregation script to generate mouse-level features.
+- ⚠️ If your setup is different, consider:
+  - Re-training or fine-tuning the model using your new data.
+  - Running t-SNE to verify whether WT and DS still cluster separately.
+
+---
+
+## 📧 Questions
+
+This repository was created as part of the Dravet Syndrome Behavioral Analysis Project.  
+For help, contact: **[Your Name Here]** at **[your.email@institution.edu]**
+
