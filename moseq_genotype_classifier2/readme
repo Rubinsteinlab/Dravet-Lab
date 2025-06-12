@@ -15,10 +15,11 @@ This pipeline performs automated classification of mouse genotype (`WT` or `DS`)
 ├── final_moseq_model.pkl                  # Trained Random Forest model
 ├── final_scaler.pkl                       # StandardScaler for input normalization
 ├── final_features.pkl                     # List of input feature names used by the model
-├── predict_genotype_new_data.py          # Script to classify new MoSeq data
+├── predict_genotype_new_data.py           # Script to classify new MoSeq data
 ├── create_combined_moseq_df.py           # Script to generate test mixes of WT/DS
 ├── train_and_save_final_model.py         # (Optional) Re-training script on labeled mice
 ├── visualize_feature_space.py            # PCA and t-SNE visualization
+├── features_importance.py                # Features importance for classification histogram
 ├── README.md                             
 ```
 
