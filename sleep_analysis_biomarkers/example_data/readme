@@ -8,11 +8,11 @@ It provides real EEG and EMG recordings from two mice — one wild-type (WT) and
 ## 📂 Dataset Structure
 
 - `example_data/`
-  - `C4524 WT/`
+  - `C4508 WT/`
     - `EEG(R).mat` – Right hemisphere EEG signal  
     - `EEG(L).mat` – Left hemisphere EEG signal  
     - `EMG.mat` – Electromyogram recording  
-  - `C4659 DS/`
+  - `C4510 DS/`
     - `EEG(R).mat` – Right hemisphere EEG signal  
     - `EEG(L).mat` – Left hemisphere EEG signal  
     - `EMG.mat` – Electromyogram recording  
