@@ -154,7 +154,7 @@ Sleep labels produced by SleepScore can be directly imported into AccuSleep for 
 A small example dataset is provided under `/example_data/` to test the pipeline.  
 It contains EEG, EMG, and label files from a short 2-minute mouse recording (2000 Hz, 5 s epochs).  
 Run the full workflow using:
-```matlab
+matlab
 >> SleepScore
 >> SleepLabApp
 
