@@ -1,7 +1,7 @@
-🧠 ##Sleep and Biomarker Analysis Pipeline
+🧠 Sleep and Biomarker Analysis Pipeline
 
 
-##Overview
+Overview
 
 This repository provides a complete MATLAB-based framework for automated sleep scoring and EEG biomarker analysis in mouse models.
 The pipeline is divided into two main components:
@@ -13,7 +13,7 @@ SleepLabApp (GUI) – a graphical interface for multi-modal biomarker discovery 
 The pipeline was developed for preclinical electrophysiological research and is compatible with both Neuralynx and LabChart data.
 
 
-🚀 ##Workflow Summary
+🚀 Workflow Summary
 
 *1. Sleep Scoring*
 
