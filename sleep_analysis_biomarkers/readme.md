@@ -163,8 +163,8 @@ matlab
 👤 Author
 
 Shahak Ranen
-M.Sc. Neuroscience, Tel Aviv University
-Department of Human Molecular Genetics & Biochemistry
+M.Sc. Neuroscience, Tel Aviv University, Department of Human Molecular Genetics & Biochemistry
+
 Rubinstein Lab - "Dravet Syndrome" Lab, Tel Aviv University & Sheba Tel HaShomer Medical Center
 
 Shahak Ranen <shahakranen@mail.tau.ac.il>
