@@ -70,7 +70,7 @@ Example organization after running **SleepScore**:
  │
  ├── SleepScore.m
  ├── SleepLabApp.m
-
+'''
 
 ---
 
