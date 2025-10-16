@@ -168,6 +168,7 @@ M.Sc. Neuroscience, Tel Aviv University, Department of Human Molecular Genetics 
 Rubinstein Lab - "Dravet Syndrome" Lab, Tel Aviv University & Sheba Tel HaShomer Medical Center
 
 Shahak Ranen <shahakranen@mail.tau.ac.il>
+
 Moran Rubinstein <moranrub@mail.tau.ac.il>
 
 
