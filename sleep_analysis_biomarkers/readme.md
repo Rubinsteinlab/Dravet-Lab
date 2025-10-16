@@ -80,6 +80,8 @@ Example organization after running **SleepScore**:
 
 ---
 
+
+
 ## ⚙️ Usage
 
 ### **Step 1 – Run SleepScore**
