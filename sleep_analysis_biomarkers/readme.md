@@ -70,3 +70,22 @@ Example organization after running **SleepScore**:
  │
  ├── SleepScore.m
  ├── SleepLabApp.m
+
+
+ ## 🧩 System Requirements
+- MATLAB **R2021a** or later  
+- **Signal Processing Toolbox**  
+- **Statistics and Machine Learning Toolbox**  
+- *(Optional)* Parallel Computing Toolbox for large datasets  
+
+---
+
+## ⚙️ Usage
+
+### **Step 1 – Run SleepScore**
+
+```matlab
+>> SleepScore
+
+
+
