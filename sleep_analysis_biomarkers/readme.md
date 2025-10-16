@@ -120,7 +120,7 @@ All results and plots are automatically saved inside the selected root directory
 
 
 
-📊 Outputs
+## 📊 Outputs
 
 Each module exports both per-mouse and group-level results:
 
@@ -135,7 +135,7 @@ Metadata .csv documenting all analysis parameters
 The pipeline integrates seamlessly with AccuSleep - sleep labels from SleepScore can be imported for manual validation or refinement.
 
 
-🧠 Example Dataset
+##  🧠 Example Dataset
 
 A small example dataset is provided under /example_data/ for quick testing.
 It includes EEG, EMG, and label files from a 2-minute mouse recording (2000 Hz, 5 s epochs).
@@ -143,7 +143,7 @@ It includes EEG, EMG, and label files from a 2-minute mouse recording (2000 Hz, 
 
 
 
-👤 Author
+## 👤 Author
 
 Shahak Ranen
 M.Sc. Neuroscience, Tel Aviv University
