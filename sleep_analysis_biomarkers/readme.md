@@ -138,6 +138,7 @@ The pipeline integrates seamlessly with AccuSleep - sleep labels from SleepScore
 ##  🧠 Example Dataset
 
 A small example dataset is provided under /example_data/ for quick testing.
+
 It includes raw EEG & EMG files from a 24 hours mice recordings (2000 Hz, recored with Neuralynx Acquisition Software).
 
 
