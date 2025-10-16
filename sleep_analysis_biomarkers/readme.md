@@ -69,17 +69,21 @@ Each module automatically detects mice folders (WT/DS), processes recordings, an
 Example project organization (after sleepScore analysis):
 
 📁 main_directory/
+ 
  ├── 🐭 C4524 WT/
  │    ├── EEG_accusleep.mat
  │    ├── EMG_accusleep.mat
  │    ├── labels.mat
  │   
+ 
  ├── 🐭 C4659 DS/
  │    ├── EEG_accusleep.mat
  │    ├── EMG_accusleep.mat
  │    ├── labels.mat
  │    └── 
+ 
  ├── SleepScore.m
+ 
  ├── SleepLabApp.m
  
 
@@ -97,6 +101,7 @@ Statistics and Machine Learning Toolbox
 
 
 ⚙️ Usage
+
 Step 1 – Run SleepScore
 >> SleepScore
 
@@ -149,6 +154,7 @@ Sleep labels produced by SleepScore can be directly imported into AccuSleep for 
 
 
 👤 Author
+
 Shahak Ranen
 M.Sc. Neuroscience, Tel Aviv University
 Department of Human Molecular Genetics & Biochemistry
