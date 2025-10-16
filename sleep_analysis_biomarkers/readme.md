@@ -1,92 +1,75 @@
 🧠 Sleep and Biomarker Analysis Pipeline
-
-
-Overview
+📘 Overview
 
 This repository provides a complete MATLAB-based framework for automated sleep scoring and EEG biomarker analysis in mouse models.
-The pipeline is divided into two main components:
+The pipeline consists of two complementary components:
 
 SleepScore – processes raw EEG and EMG recordings to generate sleep-state labels (Wake, NREM, REM, Undefined).
 
-SleepLabApp (GUI) – a graphical interface for multi-modal biomarker discovery and group analysis across mice, including spectral, fractal, and coupling metrics.
+SleepLabApp (GUI) – an interactive graphical interface for multi-modal biomarker discovery and group analysis across mice, including spectral, fractal, and coupling metrics.
 
-The pipeline was developed for preclinical electrophysiological research and is compatible with both Neuralynx and LabChart data.
-
+Developed for preclinical electrophysiology, the pipeline supports data acquired from both Neuralynx and LabChart systems.
 
 🚀 Workflow Summary
+1️⃣ Sleep Scoring
 
-*1. Sleep Scoring*
+Run the SleepScore.m script to process raw EEG/EMG recordings and classify each 5-second epoch into sleep states.
 
-Run the SleepScore script to process raw EEG/EMG recordings and classify each 5-second epoch into sleep states.
+Input
 
-Input:
-
-EEG and EMG recordings (from Neuralynx or LabChart)
+EEG and EMG recordings (Neuralynx or LabChart)
 
 Sampling rate and AD conversion parameters
 
-Output:
+Output
 
-labels.mat - numeric vector of classified states (1 = REM, 2 = Wake, 3 = NREM)
+labels.mat – numeric vector of classified states
+(1 = REM, 2 = Wake, 3 = NREM, 4 = Undefined)
 
-EEG_accusleep + EMG_accusleep - variables that can be loaded into Accusleep software.
-Optional: visual hypnogram and .csv summary file
+EEG_accusleep.mat / EMG_accusleep.mat – compatible with AccuSleep software
 
-After classification, you can:
+Optional: hypnogram and .csv summary file
 
-Continue detailed manual inspection in AccuSleep
+After classification, you can either:
 
-(Chen et al., 2022 - Validation of Deep Learning-based Sleep State Classification)
+Continue manual inspection in AccuSleep
+(Chen et al., 2022, Validation of Deep Learning-based Sleep State Classification)
 
 Or proceed directly to SleepLabApp for biomarker extraction.
 
+2️⃣ Biomarker Discovery
 
-*2. Biomarker Discovery*
+Launch SleepLabApp.m to analyze the labeled recordings.
 
-Launch the SleepLabApp.m GUI to analyze the labeled recordings.
+The SleepLabApp GUI enables exploration of multiple EEG-based biomarkers.
+Each module is accessible via a dropdown menu and produces publication-ready plots and CSV exports.
 
-Modules available:
+Module	Description	Input	Output
+PSD Grouping	Computes and compares Power Spectral Density (PSD) profiles between groups (e.g., WT vs DS) for Wake, NREM, and REM. Optional peak filtering and notch removal.	EEG + labels	Group PSD plots, .mat and .csv summaries
+Theta–Gamma PAC	Computes Phase–Amplitude Coupling (PAC) during REM using Modulation Index and phase–amplitude distributions.	REM EEG or labeled REM epochs	PAC curves, MI heatmaps, .csv summaries
+Higuchi Fractal Dimension (HFD)	Estimates HFD per epoch to capture EEG complexity across sleep states.	EEG + labels	Boxplots, per-state HFD .csv files, summary tables
+Beta-Bursts	Detects transient beta-band bursts during wake and extracts amplitude, duration, frequency, and IBI features.	EEG (L/R) + labels	CDF plots, per-mouse and group .csv summaries
+MDF/SEF/Peak Frequency	Computes Median Frequency (MDF), Spectral Edge Frequency (SEF), and dominant Peak frequency per state.	Raw EEG + labels	Bar plots with SEM, per-mouse/group .csv outputs
 
-2. Biomarker Discovery
-
-The **SleepLabApp** GUI allows exploration of multiple EEG-based biomarkers extracted from labeled recordings.  
-Each module is accessible via a dropdown menu and produces publication-ready visualizations and CSV exports.
-
-| Module | Description | Input | Output |
-|--------|--------------|--------|---------|
-| **PSD Grouping** | Computes and compares Power Spectral Density (PSD) profiles between groups (e.g., WT vs DS) for Wake, NREM, and REM. Optional peak filtering and notch removal. | EEG + labels | Group PSD plots, `.mat` and `.csv` summaries |
-| **Theta–Gamma PAC** | Computes Phase-Amplitude Coupling (PAC) during REM sleep using Modulation Index and phase–amplitude distributions. | REM EEG or labeled REM epochs | PAC distribution curves, MI heatmaps, `.csv` summaries |
-| **Higuchi Fractal Dimension (HFD)** | Estimates HFD per epoch to capture EEG signal complexity during different sleep states. | EEG + labels | Boxplots, per-state HFD `.csv` files, summary tables |
-| **Beta-Bursts** | Detects beta-band transient bursts during wake and extracts amplitude, duration, frequency, and IBI features. | EEG(L/R) + labels | CDF plots, per-mouse and group `.csv` summaries |
-| **MDF/SEF/Peak Frequency** | Computes Median Frequency (MDF), Spectral Edge Frequency (SEF), and dominant Peak frequency for each state. | Raw EEG + labels | Bar plots with SEM, per-mouse and group `.csv` outputs |
-
-Each module automatically detects mice folders (WT/DS), processes recordings, and exports both MATLAB and CSV outputs for reproducibility and external analysis.
-
-
+Each module automatically detects mouse folders (e.g., WT/DS), processes recordings, and exports MATLAB and CSV outputs for reproducibility and external analysis.
 
 📂 Directory Structure
 
-Example project organization (after sleepScore analysis):
+Example organization after running SleepScore:
 
 📁 main_directory/
- 
  ├── 🐭 C4524 WT/
  │    ├── EEG_accusleep.mat
  │    ├── EMG_accusleep.mat
  │    ├── labels.mat
- │   
- 
+ │
  ├── 🐭 C4659 DS/
  │    ├── EEG_accusleep.mat
  │    ├── EMG_accusleep.mat
  │    ├── labels.mat
- │    └── 
- 
+ │
  ├── SleepScore.m
- 
  ├── SleepLabApp.m
- 
-
 
 🧩 System Requirements
 
@@ -98,14 +81,12 @@ Statistics and Machine Learning Toolbox
 
 (Optional) Parallel Computing Toolbox for large datasets
 
-
-
 ⚙️ Usage
-
-*Step 1 – Run SleepScore*
+Step 1 – Run SleepScore
 >> SleepScore
 
-Follow the interactive prompts to select:
+
+Follow the prompts to select:
 
 Acquisition platform (Neuralynx / LabChart)
 
@@ -115,62 +96,67 @@ Channel configuration
 
 Output directory
 
-Outputs:
-labels.mat, EEG_accusleep.mat, EMG_accusleep.mat, and summary plots.
+Outputs
 
-*Step 2 – Launch SleepLabApp*
+labels.mat
+
+EEG_accusleep.mat
+
+EMG_accusleep.mat
+
+Summary plots and .csv files
+
+Step 2 – Launch SleepLabApp
 >> SleepLabApp
 
-Select the main directory containing mouse subfolders.
 
-Choose the analysis module from the dropdown.
+Then:
 
-Adjust settings (epoch length, bandpass, thresholds, etc.).
+Select the main directory containing mouse subfolders
 
-Click Run Selected Module.
+Choose the analysis module from the dropdown
 
-Monitor progress in the real-time log box.
+Adjust parameters (epoch length, bandpass, thresholds, etc.)
 
-All results and plots will be automatically saved inside the selected root directory.
+Click Run Selected Module
 
+Monitor progress in the real-time log window
+
+All results and plots are automatically saved inside the selected root directory.
 
 📊 Outputs
 
-Each module exports both per-mouse and group-level data:
+Each module exports both per-mouse and group-level results:
 
-MATLAB .mat files for reproducibility
+.mat files for reproducibility
 
 Long-format .csv tables for statistical analysis (R, Python, Excel)
 
-Publication-ready plots (PSD, PAC, CDFs, bar + SEM, heatmaps)
+Publication-ready plots (PSD, PAC, CDFs, bar ± SEM, heatmaps)
 
-Metadata .csv documenting all parameters used
+Metadata .csv documenting all analysis parameters
 
+The pipeline integrates seamlessly with AccuSleep —
+sleep labels from SleepScore can be imported for manual validation or refinement.
 
-The pipeline is designed to integrate seamlessly with AccuSleep.
-Sleep labels produced by SleepScore can be directly imported into AccuSleep for manual validation or refinement.
+🧠 Example Dataset
 
+A small example dataset is provided under /example_data/ for quick testing.
+It includes EEG, EMG, and label files from a 2-minute mouse recording (2000 Hz, 5 s epochs).
 
-## Example Dataset
-A small example dataset is provided under `/example_data/` to test the pipeline.  
-It contains EEG, EMG, and label files from a short 2-minute mouse recording (2000 Hz, 5 s epochs).  
-Run the full workflow using:
-matlab
+Run the workflow:
+
 >> SleepScore
 >> SleepLabApp
-
-
 
 👤 Author
 
 Shahak Ranen
-M.Sc. Neuroscience, Tel Aviv University, Department of Human Molecular Genetics & Biochemistry
+M.Sc. Neuroscience, Tel Aviv University
+Department of Human Molecular Genetics & Biochemistry
+Rubinstein Lab – “Dravet Syndrome” Lab
+Tel Aviv University & Sheba Tel HaShomer Medical Center
 
-Rubinstein Lab - "Dravet Syndrome" Lab, Tel Aviv University & Sheba Tel HaShomer Medical Center
+📧 Contact: shahakranen@mail.tau.ac.il
 
-Shahak Ranen <shahakranen@mail.tau.ac.il>
-
-Moran Rubinstein <moranrub@mail.tau.ac.il>
-
-
-
+👩‍🔬 PI: Prof. Moran Rubinstein – moranrub@mail.tau.ac.il
