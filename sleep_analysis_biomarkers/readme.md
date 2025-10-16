@@ -99,7 +99,7 @@ EMG_accusleep.mat
 
 Summary plots and .csv files
 
-
+### Step 2 – Launch SleepLabApp
 >> SleepLabApp
 Then follow these steps:
 
