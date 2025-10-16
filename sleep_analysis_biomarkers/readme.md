@@ -14,7 +14,7 @@ The pipeline was developed for preclinical electrophysiological research and is 
 
 
 🚀 Workflow Summary
-1. Sleep Scoring
+*1. Sleep Scoring*
 
 Run the SleepScore script to process raw EEG/EMG recordings and classify each 5-second epoch into sleep states.
 
@@ -40,8 +40,7 @@ Continue detailed manual inspection in AccuSleep
 Or proceed directly to SleepLabApp for biomarker extraction.
 
 
-
-2. Biomarker Discovery
+*2. Biomarker Discovery*
 
 Launch the SleepLabApp.m GUI to analyze the labeled recordings.
 
@@ -102,7 +101,7 @@ Statistics and Machine Learning Toolbox
 
 ⚙️ Usage
 
-Step 1 – Run SleepScore
+*Step 1 – Run SleepScore*
 >> SleepScore
 
 Follow the interactive prompts to select:
@@ -118,7 +117,7 @@ Output directory
 Outputs:
 labels.mat, EEG_accusleep.mat, EMG_accusleep.mat, and summary plots.
 
-Step 2 – Launch SleepLabApp
+*Step 2 – Launch SleepLabApp*
 >> SleepLabApp
 
 Select the main directory containing mouse subfolders.
