@@ -117,3 +117,40 @@ Click Run Selected Module
 Monitor progress in the real-time log window
 
 All results and plots are automatically saved inside the selected root directory.
+
+
+
+📊 Outputs
+
+Each module exports both per-mouse and group-level results:
+
+.mat files for reproducibility
+
+Long-format .csv tables for statistical analysis (R, Python, Excel)
+
+Publication-ready plots (PSD, PAC, CDFs, bar ± SEM, heatmaps)
+
+Metadata .csv documenting all analysis parameters
+
+The pipeline integrates seamlessly with AccuSleep - sleep labels from SleepScore can be imported for manual validation or refinement.
+
+
+🧠 Example Dataset
+
+A small example dataset is provided under /example_data/ for quick testing.
+It includes EEG, EMG, and label files from a 2-minute mouse recording (2000 Hz, 5 s epochs).
+
+
+
+
+👤 Author
+
+Shahak Ranen
+M.Sc. Neuroscience, Tel Aviv University
+Department of Human Molecular Genetics & Biochemistry
+Rubinstein Lab – “Dravet Syndrome” Lab
+Tel Aviv University & Sheba Tel HaShomer Medical Center
+
+📧 Contact: shahakranen@mail.tau.ac.il
+
+👨‍🏫 PI: Prof. Moran Rubinstein – moranrub@mail.tau.ac.il
