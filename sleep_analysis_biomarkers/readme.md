@@ -79,6 +79,7 @@ Each module is accessible via a dropdown menu and produces publication-ready plo
 ### Step 1 – Run SleepScore
 
 >> SleepScore
+
 Follow the interactive prompts to select:
 
 Acquisition platform (Neuralynx / LabChart)
@@ -100,7 +101,9 @@ EMG_accusleep.mat
 Summary plots and .csv files
 
 ### Step 2 – Launch SleepLabApp
+
 >> SleepLabApp
+
 Then follow these steps:
 
 Select the main directory containing mouse subfolders
