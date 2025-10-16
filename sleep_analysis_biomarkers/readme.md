@@ -72,6 +72,8 @@ Example organization after running **SleepScore**:
  ├── SleepLabApp.m
 
 
+---
+
  ## 🧩 System Requirements
 - MATLAB **R2021a** or later  
 - **Signal Processing Toolbox**  
