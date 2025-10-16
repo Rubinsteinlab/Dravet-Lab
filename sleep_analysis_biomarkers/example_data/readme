@@ -1,7 +1,7 @@
 # 🧪 Example Dataset – Sleep and Biomarker Analysis Pipeline
 
 This folder contains a **minimal example dataset** for testing the `SleepScore` and `SleepLabApp` components of the pipeline.  
-It provides real EEG and EMG recordings from two mice — one wild-type (WT) and one Dravet Syndrome (DS) model — allowing users to run the full workflow from sleep scoring to biomarker analysis.
+It provides real EEG and EMG recordings from one WT mouse allowing users to run the full workflow from sleep scoring to biomarker analysis.
 
 ---
 
@@ -9,10 +9,6 @@ It provides real EEG and EMG recordings from two mice — one wild-type (WT) and
 
 - `example_data/`
   - `C4508 WT/`
-    - `EEG(R).mat` – Right hemisphere EEG signal  
-    - `EEG(L).mat` – Left hemisphere EEG signal  
-    - `EMG.mat` – Electromyogram recording  
-  - `C4510 DS/`
     - `EEG(R).mat` – Right hemisphere EEG signal  
     - `EEG(L).mat` – Left hemisphere EEG signal  
     - `EMG.mat` – Electromyogram recording  
