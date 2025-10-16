@@ -146,8 +146,13 @@ It includes EEG, EMG, and label files from a 2-minute mouse recording (2000 Hz, 
 ## 👤 Author
 
 Shahak Ranen
-M.Sc. Neuroscience, Tel Aviv University Department of Human Molecular Genetics & Biochemistry
-Rubinstein Lab - “Dravet Syndrome” Lab, Tel Aviv University & Sheba Tel HaShomer Medical Center
+M.Sc. Neuroscience, Tel Aviv University 
+
+Department of Human Molecular Genetics & Biochemistry
+
+Rubinstein Lab - “Dravet Syndrome” Lab
+
+Tel Aviv University & Sheba Tel HaShomer Medical Center
 
 📧 Contact: shahakranen@mail.tau.ac.il
 
