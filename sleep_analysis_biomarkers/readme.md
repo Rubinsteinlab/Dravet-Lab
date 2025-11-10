@@ -62,7 +62,6 @@ Each module is accessible via a dropdown menu and produces publication-ready plo
   - `SleepScore.m`
   - `SleepLabApp.m`
 
-*(This Markdown list format ensures perfect GitHub rendering — no horizontal scrollbars or block breaks.)*
 
 ---
 
